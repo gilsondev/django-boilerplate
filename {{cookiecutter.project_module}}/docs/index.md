@@ -4,7 +4,7 @@
 
 - Clone this project
 ```shell
-git clone git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}.git
+git clone git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.project_module}}.git
 ```
 
 - (Optional) Create a virtual environment
@@ -69,7 +69,7 @@ heroku config:set EMAIL_HOST_PASSWORD=`heroku config:get SENDGRID_PASSWORD`
 ├── manage.py
 ├── pyproject.toml
 ├── poetry.lock
-├── {{cookiecutter.repo_name}}
+├── {{cookiecutter.project_module}}
 │   ├── asgi.py
 │   ├── accounts
 │   │   ├── admin.py

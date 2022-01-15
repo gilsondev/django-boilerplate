@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{cookiecutter.repo_name}}"
+name = "{{cookiecutter.project_module}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
@@ -24,7 +24,7 @@ mkdocs = "^1.2.3"
 mkdocs-material = "^8.1.6"
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "{{cookiecutter.repo_name}}.settings"
+DJANGO_SETTINGS_MODULE = "{{cookiecutter.project_module}}.settings"
 addopts = "--nomigrations"
 python_files = "tests.py test_*.py *_tests.py"
 

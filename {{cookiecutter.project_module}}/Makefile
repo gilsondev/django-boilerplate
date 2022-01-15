@@ -28,5 +28,5 @@ docker-run:
 .PHONY: docker-destroy
 docker-destroy:
 	@echo "Destroying containers and volumes..."
-	@docker-compose rm -vsf {{cookiecutter.repo_name}} {{cookiecutter.repo_name}}-db
-	@docker volume rm {{cookiecutter.repo_name}}_postgres_data
+	@docker-compose rm -vsf {{cookiecutter.project_module}} {{cookiecutter.project_module}}-db
+	@docker volume rm {{cookiecutter.project_module}}_postgres_data

@@ -1,6 +1,7 @@
 {
   "project_name": "Django Minimal Project",
-  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "project_module": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "author": "Gilson Filho",
   "email": "me@gilsondev.in",
   "github_username": "{{ cookiecutter.author.lower().replace(' ', '-') }}",
