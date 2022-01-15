@@ -1,10 +1,13 @@
 {
   "project_name": "Django Minimal Project",
-  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "author": "Gilson Filho",
   "email": "me@gilsondev.in",
   "github_username": "{{ cookiecutter.author.lower().replace(' ', '-') }}",
   "version": "0.0.1",
   "description": "Template to minimal django projects",
-  "license": ["MIT License", "GNU General Public License v3" ]
+  "license": [
+    "MIT License",
+    "GNU General Public License v3"
+  ]
 }
