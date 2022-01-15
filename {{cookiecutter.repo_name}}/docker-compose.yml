@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  {{cookiecutter.repo_name}}:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: {{cookiecutter.repo_name}}
+    image: {{cookiecutter.repo_name}}
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgres://{{cookiecutter.repo_name}}:{{cookiecutter.repo_name}}@{{cookiecutter.repo_name}}-db:5432/{{cookiecutter.repo_name}}_dev
+    depends_on:
+      - {{cookiecutter.repo_name}}-db
+
+  {{cookiecutter.repo_name}}-db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    environment: 
+      - POSTGRES_USER={{cookiecutter.repo_name}}
+      - POSTGRES_PASSWORD={{cookiecutter.repo_name}}
+      - POSTGRES_DB={{cookiecutter.repo_name}}_dev
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+volumes:
+  postgres_data:
